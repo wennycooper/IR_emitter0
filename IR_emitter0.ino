@@ -12,6 +12,8 @@ void loop() {
   if(true) { // 讀取序列埠
     d = '1';
     unsigned long v = 0x0;
+
+    /*
     switch(d){ // 根據讀取到的資料，換成代表六個按鍵的紅外線編碼
       case '1':
         v = 0x77E14050;
@@ -32,7 +34,8 @@ void loop() {
         v = 0x77E11050;
       break;
     }
-
+    */
+    
     v = 0x77E14050;
     if(v != 0x0){
       //Serial.print("read ");
@@ -40,7 +43,7 @@ void loop() {
       Serial.print(", IR send ");
       Serial.println(v, HEX);
       irsend.sendNEC(v, 32); // 輸出紅外線訊號
-      delay(1000);
+      delay(31);
     }
   }
 }
