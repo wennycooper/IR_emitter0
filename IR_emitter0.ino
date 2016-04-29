@@ -17,6 +17,6 @@ void loop() {
 
   while (1) {
     irsend.sendNEC(v, 32); // 輸出紅外線訊號
-    delay(31);
+    delay(31);  // this is NEC frame footer space, can not be smaller.
   }
 }
